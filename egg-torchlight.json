@@ -4,16 +4,16 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2023-09-28T21:04:56+02:00",
+    "exported_at": "2024-07-17T22:02:12+02:00",
     "name": "Torchlight",
     "author": "srcdslab",
     "description": null,
     "features": null,
     "docker_images": {
-        "ghcr.io\/srcdslab\/torchlight:master": "ghcr.io\/srcdslab\/torchlight:master"
+        "ghcr.io\/srcdslab\/torchlight:master@sha256:2f684e4a8edafd2384688ea494bd09e9f4a1ad114107195e4ae09afe2409cb39": "ghcr.io\/srcdslab\/torchlight:master@sha256:2f684e4a8edafd2384688ea494bd09e9f4a1ad114107195e4ae09afe2409cb39"
     },
     "file_denylist": [],
-    "startup": "torchlight -vvv",
+    "startup": "torchlight",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"OnConnect\"\r\n}",
@@ -29,23 +29,13 @@
     },
     "variables": [
         {
-            "name": "PUID",
+            "name": "Data path inside the container",
             "description": "",
-            "env_variable": "PUID",
-            "default_value": "0",
+            "env_variable": "DATA_PATH",
+            "default_value": "\/home\/container",
             "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|integer|max:20",
-            "field_type": "text"
-        },
-        {
-            "name": "PGID",
-            "description": "",
-            "env_variable": "PGID",
-            "default_value": "0",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string|max:20",
+            "user_editable": false,
+            "rules": "required|string|max:256",
             "field_type": "text"
         }
     ]
